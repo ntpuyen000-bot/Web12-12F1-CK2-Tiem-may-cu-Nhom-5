@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng - Tiệm Máy Cũ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🎮 Tiệm Máy Cũ</div>
+    <ul class="nav-links">
+        <li><a href="index.html">🏠 Trang Chủ</a></li>
+        <li><a href="shop.html">🛍️ Cửa Hàng</a></li>
+        <li><a href="product.html">📱 Chi Tiết Sản Phẩm</a></li>
+    </ul>
+    <div class="navbar-right">
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒
+            <span class="cart-count" id="cartCount" style="display: none;">0</span>
+        </div>
+        <select class="language-selector" onchange="changeLanguage(this.value)">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="ja">🇯🇵 日本語</option>
+        </select>
+    </div>
+</nav>
+
+<!-- SHOP CONTENT -->
+<div class="shop-container">
+    <h1>🛍️ Cửa Hàng Của Chúng Tôi</h1>
+    
+    <div class="shop-grid">
+        <!-- Product 1 -->
+        <div class="shop-product">
+            <img src="https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg" alt="Tamagotchi Classic" onclick="showProductDetail('p1')" style="cursor: pointer;">
+            <h3>Tamagotchi Classic</h3>
+            <div class="price">450.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p1', name: 'Tamagotchi Classic', price: '450.000đ', image: 'https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="shop-product">
+            <img src="https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg" alt="Máy Xếp Gạch Tetris" onclick="showProductDetail('p2')" style="cursor: pointer;">
+            <h3>Máy Xếp Gạch Tetris</h3>
+            <div class="price">350.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p2', name: 'Máy Xếp Gạch Tetris', price: '350.000đ', image: 'https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="shop-product">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc" alt="PS5" onclick="showProductDetail('p3')" style="cursor: pointer;">
+            <h3>Máy Chơi Game PS5</h3>
+            <div class="price">31.200.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p3', name: 'Máy Chơi Game PS5', price: '31.200.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="shop-product">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc" alt="Sup 400" onclick="showProductDetail('p4')" style="cursor: pointer;">
+            <h3>Máy Cầm Tay Sup 400</h3>
+            <div class="price">390.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p4', name: 'Máy Cầm Tay Sup 400', price: '390.000đ', image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="shop-product">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc" alt="Nintendo Switch" onclick="showProductDetail('p5')" style="cursor: pointer;">
+            <h3>Nintendo Switch Cầm Tay</h3>
+            <div class="price">6.320.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p5', name: 'Nintendo Switch Cầm Tay', price: '6.320.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="shop-product">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc" alt="Mario Kart" onclick="showProductDetail('p6')" style="cursor: pointer;">
+            <h3>Mario Kart World - NSW 2</h3>
+            <div class="price">1.650.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p6', name: 'Mario Kart World - NSW 2', price: '1.650.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="shop-product">
+            <img src="https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21" alt="Hades 2" onclick="showProductDetail('p7')" style="cursor: pointer;">
+            <h3>Hades 2 - Nintendo Switch 2</h3>
+            <div class="price">1.650.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p7', name: 'Hades 2 - Nintendo Switch 2', price: '1.650.000đ', image: 'https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="shop-product">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ" alt="Donkey Kong" onclick="showProductDetail('p8')" style="cursor: pointer;">
+            <h3>Donkey Kong Banana - NSW 2</h3>
+            <div class="price">1.650.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p8', name: 'Donkey Kong Banana - NSW 2', price: '1.650.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="shop-product">
+            <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1" alt="Tamagotchi Celebration" onclick="showProductDetail('p9')" style="cursor: pointer;">
+            <h3>Tamagotchi Celebration</h3>
+            <div class="price">1.000.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p9', name: 'Tamagotchi Celebration', price: '1.000.000đ', image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="shop-product">
+            <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1" alt="Tamagotchi Paradise" onclick="showProductDetail('p10')" style="cursor: pointer;">
+            <h3>Tamagotchi Paradise - Jade</h3>
+            <div class="price">1.000.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p10', name: 'Tamagotchi Paradise - Jade', price: '1.000.000đ', image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="shop-product">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Angel Sky" onclick="showProductDetail('p11')" style="cursor: pointer;">
+            <h3>Tamagotchi Angel Sky</h3>
+            <div class="price">1.000.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p11', name: 'Tamagotchi Angel Sky', price: '1.000.000đ', image: 'https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="shop-product">
+            <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1" alt="Tama Garden" onclick="showProductDetail('p12')" style="cursor: pointer;">
+            <h3>Tamagotchi Tama Garden</h3>
+            <div class="price">1.000.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p12', name: 'Tamagotchi Tama Garden', price: '1.000.000đ', image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 13 -->
+        <div class="shop-product">
+            <img src="https://cdn.shopify.com/s/files/1/0905/5305/7560/files/Game-boy_600x600.webp?v=1764301353" alt="Game Boy" onclick="showProductDetail('p13')" style="cursor: pointer;">
+            <h3>Game Boy Classic - Retro</h3>
+            <div class="price">850.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p13', name: 'Game Boy Classic - Retro', price: '850.000đ', image: 'https://cdn.shopify.com/s/files/1/0905/5305/7560/files/Game-boy_600x600.webp?v=1764301353'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 14 -->
+        <div class="shop-product">
+            <img src="https://i.etsystatic.com/21585616/r/il/ac3b6f/5409944736/il_fullxfull.5409944736_r3bo.jpg" alt="Pokémon" onclick="showProductDetail('p14')" style="cursor: pointer;">
+            <h3>Pokémon Handheld Game</h3>
+            <div class="price">750.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p14', name: 'Pokémon Handheld Game', price: '750.000đ', image: 'https://i.etsystatic.com/21585616/r/il/ac3b6f/5409944736/il_fullxfull.5409944736_r3bo.jpg'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 15 -->
+        <div class="shop-product">
+            <img src="https://i.ebayimg.com/images/g/u4cAAeSw4HJoauLu/s-l1200.jpg" alt="Virtual Pet" onclick="showProductDetail('p15')" style="cursor: pointer;">
+            <h3>Virtual Pet Nano</h3>
+            <div class="price">520.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p15', name: 'Virtual Pet Nano', price: '520.000đ', image: 'https://i.ebayimg.com/images/g/u4cAAeSw4HJoauLu/s-l1200.jpg'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+
+        <!-- Product 16 -->
+        <div class="shop-product">
+            <img src="https://thegioigames.vn/wp-content/uploads/2025/05/O1CN01v905Sd1TpRsprEjN4_2200788832431-0-cib.jpg" alt="Brick Game" onclick="showProductDetail('p16')" style="cursor: pointer;">
+            <h3>Brick Game Cổ Điển</h3>
+            <div class="price">250.000đ</div>
+            <button class="btn-view" onclick="addToCart({id: 'p16', name: 'Brick Game Cổ Điển', price: '250.000đ', image: 'https://thegioigames.vn/wp-content/uploads/2025/05/O1CN01v905Sd1TpRsprEjN4_2200788832431-0-cib.jpg'})">🛒 Thêm Vào Giỏ</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p><strong>🎮 Tiệm Máy Cũ</strong> - Chuyên máy game & đồ chơi tuổi thơ.</p>
+    <div class="footer-links">
+        <a href="index.html">Trang Chủ</a> | 
+        <a href="shop.html">Cửa Hàng</a> | 
+        <a href="product.html">Chi Tiết Sản Phẩm</a>
+    </div>
+    <p style="margin-top: 10px; font-size: 13px;">📞 0909 123 456 | 📧 tiemmaycu@email.com</p>
+</footer>
+
+<!-- CART MODAL -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+        <div class="cart-modal-header">
+            <h2>🛒 Giỏ Hàng</h2>
+            <button class="cart-close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cartItems"></div>
+        <div id="cartSummary" style="display: none;" class="cart-summary">
+            <div class="cart-total">
+                <span>Tổng cộng:</span>
+                <span class="cart-total-amount" id="cartTotalPrice">0đ</span>
+            </div>
+            <button class="cart-checkout-btn">💳 Thanh Toán</button>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="product-detail-modal" id="productDetailModal">
+    <button class="product-detail-modal-close" onclick="closeProductDetail()">✕</button>
+    <div class="product-detail-modal-content">
+        <img id="detailImg" class="product-detail-modal-img" src="">
+        <div class="product-detail-modal-info">
+            <h1 id="detailName"></h1>
+            <div class="product-detail-modal-price" id="detailPrice"></div>
+            <div class="product-detail-modal-desc" id="detailDesc"></div>
+            <div class="product-detail-modal-specs" id="detailSpecs"></div>
+            <button class="product-detail-modal-btn" id="detailAddBtn">🛒 Thêm Vào Giỏ Hàng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Product details database
+    const productDetails = {
+        p1: {
+            id: 'p1',
+            name: 'Tamagotchi Classic',
+            price: '450.000đ',
+            image: 'https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg',
+            description: 'Khám phá trò chơi chăm sóc thú cưng ảo huyền thoại đã gây bão vào những năm 1990s! Tamagotchi Classic là phiên bản tái sinh hoàn hảo của trò chơi được yêu thích toàn thế giới.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Kích thước:</strong> 5.8 x 2.8 cm</p><p>🔹 <strong>Màn hình:</strong> LCD màu sắc rực rỡ</p><p>🔹 <strong>Pin:</strong> AAA (1 cái), ~4 tháng</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p><p>🔹 <strong>Tuổi:</strong> Từ 8 tuổi trở lên</p>'
+        },
+        p2: {
+            id: 'p2',
+            name: 'Máy Xếp Gạch Tetris',
+            price: '350.000đ',
+            image: 'https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg',
+            description: 'Game Tetris kinh điển trong lòng bàn tay bạn. Trò chơi xếp gạch vô cùng hấp dẫn với âm thanh sống động và giao diện màu sắc.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Loại:</strong> Trò chơi điện tử cầm tay</p><p>🔹 <strong>Pin:</strong> AA x 2, ~30 giờ chơi</p><p>🔹 <strong>Kích thước:</strong> 10 x 7 cm</p><p>🔹 <strong>Âm thanh:</strong> Có (có thể tắt)</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p>'
+        },
+        p3: {
+            id: 'p3',
+            name: 'PS5 - PlayStation 5',
+            price: '31.200.000đ',
+            image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc',
+            description: 'Máy chơi game PlayStation 5 - thế hệ mới nhất với hiệu năng vô cùng mạnh mẽ. Tích hợp SSD nvme tốc độ cao và bộ xử lý Ryzen tối ưu.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>CPU:</strong> AMD Ryzen Zen 2 (8 cores, 3.5 GHz)</p><p>🔹 <strong>GPU:</strong> AMD RDNA 2 (10.28 TFLOPS)</p><p>🔹 <strong>RAM:</strong> 16GB GDDR6</p><p>🔹 <strong>Lưu trữ:</strong> 825GB SSD</p><p>🔹 <strong>Độ phân giải:</strong> 4K @ 120Hz</p>'
+        },
+        p4: {
+            id: 'p4',
+            name: 'Máy Cầm Tay Sup 400',
+            price: '390.000đ',
+            image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc',
+            description: 'Máy chơi game cầm tay retro với 400 trò chơi tích hợp. Thiết kế nhỏ gọn, pin lâu dùng, hoàn hảo cho những khoảnh khắc giải trí.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Số trò chơi:</strong> 400+ game</p><p>🔹 <strong>Màn hình:</strong> 3.5 inch LCD</p><p>🔹 <strong>Pin:</strong> Lithium 500mAh, ~8 giờ</p><p>🔹 <strong>Kết nối:</strong> Có thể dùng AV/HDMI</p><p>🔹 <strong>Trọng lượng:</strong> 200g</p>'
+        },
+        p5: {
+            id: 'p5',
+            name: 'Nintendo Switch - Máy Chơi Game Cầm Tay',
+            price: '6.320.000đ',
+            image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc',
+            description: 'Nintendo Switch - máy chơi game hybrid có thể chơi ở mọi nơi. Kết nối người chơi với hàng triệu game tuyệt vời và trải nghiệm chơi game mới mẻ.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Màn hình:</strong> 6.2 inch LCD 720p cảm ứng</p><p>🔹 <strong>Bộ vi xử lý:</strong> NVIDIA Tegra</p><p>🔹 <strong>RAM:</strong> 4GB</p><p>🔹 <strong>Lưu trữ:</strong> 32GB tích hợp</p><p>🔹 <strong>Pin:</strong> 4310mAh, ~6.5 giờ chơi</p>'
+        },
+        p6: {
+            id: 'p6',
+            name: 'Mario Kart World - Nintendo Switch 2',
+            price: '1.650.000đ',
+            image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc',
+            description: 'Game đua xe Mario Kart World mới nhất chỉ dành cho Nintendo Switch 2. Với đồ họa tuyệt đẹp và gameplay thú vị, này là phải chơi!',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Nền tảng:</strong> Nintendo Switch 2</p><p>🔹 <strong>Thể loại:</strong> Đua xe, Party</p><p>🔹 <strong>Người chơi:</strong> Từ 1-12 người</p><p>🔹 <strong>Ngôn ngữ:</strong> Tiếng Anh, Tiếng Nhật, Tiếng Việt</p><p>🔹 <strong>Cấp độ:</strong> Cho mọi lứa tuổi</p>'
+        },
+        p7: {
+            id: 'p7',
+            name: 'Hades 2 - Nintendo Switch 2',
+            price: '1.650.000đ',
+            image: 'https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21',
+            description: 'Hades 2 - game hành động kỳ ảo hoàn toàn mới lạ trên Nintendo Switch 2. Với âm nhạc tuyệt vời, lối chơi nghiện và câu chuyện hấp dẫn.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Nền tảng:</strong> Nintendo Switch 2</p><p>🔹 <strong>Thể loại:</strong> Action, Roguelike</p><p>🔹 <strong>Dung lượng:</strong> ~20GB</p><p>🔹 <strong>Từ 1 người chơi</strong></p><p>🔹 <strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ 5/5 sao</p>'
+        },
+        p8: {
+            id: 'p8',
+            name: 'Donkey Kong Banana - Nintendo Switch 2',
+            price: '1.650.000đ',
+            image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ',
+            description: 'Donkey Kong Banana Country trở lại với phễu mới trên Nintendo Switch 2. Trò chơi nhảy và chạy đầy thử thách với đồ họa 3D tuyệt đẹp.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Nền tảng:</strong> Nintendo Switch 2</p><p>🔹 <strong>Thể loại:</strong> Platformer</p><p>🔹 <strong>Người chơi:</strong> 1-2 người</p><p>🔹 <strong>Giai đoạn:</strong> 50+ level</p><p>🔹 <strong>Ngôn ngữ:</strong> Tiếng Anh, Tiếng Nhật, Tiếng Việt</p>'
+        },
+        p9: {
+            id: 'p9',
+            name: 'Tamagotchi Celebration - Phiên Bản Kỷ Niệm',
+            price: '1.000.000đ',
+            image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1',
+            description: 'Bản kỷ niệm đặc biệt của Tamagotchi Celebration với thiết kế độc quyền. Tôn vinh lịch sử của trò chơi với các tính năng mới thú vị.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Tên:</strong> Tamagotchi Celebration</p><p>🔹 <strong>Tính năng:</strong> LCD màu, nhân vật riêng</p><p>🔹 <strong>Pin:</strong> AAA, ~4 tháng</p><p>🔹 <strong>Thiết kế:</strong> Phiên bản kỷ niệm đặc biệt</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p>'
+        },
+        p10: {
+            id: 'p10',
+            name: 'Tamagotchi Paradise - Jade Forest',
+            price: '1.000.000đ',
+            image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1',
+            description: 'Tamagotchi Paradise với chủ đề Jade Forest - khu rừng xanh mát. Chăm sóc những thú cưng ảo trong thiên nhiên tuyệt đẹp và bí ẩn.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Chủ đề:</strong> Jade Forest (khu rừng xanh)</p><p>🔹 <strong>Nhân vật:</strong> Những sinh vật rừng kỳ lạ</p><p>🔹 <strong>Màn hình:</strong> LCD đầy màu sắc</p><p>🔹 <strong>Tính năng:</strong> Kết nối với các thiết bị khác</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p>'
+        },
+        p11: {
+            id: 'p11',
+            name: 'Tamagotchi Angel Sky',
+            price: '1.000.000đ',
+            image: 'https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
+            description: 'Tamagotchi Angel Sky - phiên bản thiên thần với chủ đề bầu trời xanh. Chăm sóc những nhân vật tuyệt đẹp bay trong không gian.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Chủ đề:</strong> Angel Sky (bầu trời</p><p>🔹 <strong>Nhân vật:</strong> Những thần thoại trên trời</p><p>🔹 <strong>Màn hình:</strong> LCD đầy sắc màu tiên đẹp</p><p>🔹 <strong>Pin:</strong> AAA x 1, ~4 tháng</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p>'
+        },
+        p12: {
+            id: 'p12',
+            name: 'Tamagotchi Tama Garden',
+            price: '1.000.000đ',
+            image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1',
+            description: 'Tamagotchi Tama Garden - không gian vườn với những sinh vật thần kỳ. Xây dựng và chăm sóc lâu đài của riêng bạn với Tamagotchi.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Chủ đề:</strong> Tama Garden (vườn tama)</p><p>🔹 <strong>Đặc điểm:</strong> Xây dựng vườn riêng</p><p>🔹 <strong>Nhân vật:</strong> 100+ nhân vật khác nhau</p><p>🔹 <strong>Pin:</strong> AAA, ~4 tháng</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p>'
+        },
+        p13: {
+            id: 'p13',
+            name: 'Game Boy Classic - Retro',
+            price: '850.000đ',
+            image: 'https://cdn.shopify.com/s/files/1/0905/5305/7560/files/Game-boy_600x600.webp?v=1764301353',
+            description: 'Game Boy Classic - chiếc máy game huyền thoại của những năm 90 được tái hiện lại với độ chân thực cao. Tải đầy đủ các game kinh điển.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Màn hình:</strong> LCD 2.4 inch đơn sắc</p><p>🔹 <strong>Pin:</strong> AA x 4, ~15-30 giờ</p><p>🔹 <strong>Game tích hợp:</strong> 400+ game</p><p>🔹 <strong>Kết nối:</strong> Có cổng Link Cable</p><p>🔹 <strong>Trọng lượng:</strong> 210g (nhẹ)</p>'
+        },
+        p14: {
+            id: 'p14',
+            name: 'Pokémon Handheld Game',
+            price: '750.000đ',
+            image: 'https://i.etsystatic.com/21585616/r/il/ac3b6f/5409944736/il_fullxfull.5409944736_r3bo.jpg',
+            description: 'Pokémon Handheld Game - trò chơi bắt Pokémon cầm tay với 150+ nhân vật từ thế hệ đầu tiên. Phải bắt được tất cả!',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Pokémon:</strong> 151 nhân vật Pokémon</p><p>🔹 <strong>Màn hình:</strong> LCD đầy màu sắc</p><p>🔹 <strong>Pin:</strong> AAA x 2, ~8-10 giờ</p><p>🔹 <strong>Chế độ chơi:</strong> Adventure, Training</p><p>🔹 <strong>Bảo hành:</strong> 12 tháng</p>'
+        },
+        p15: {
+            id: 'p15',
+            name: 'Virtual Pet Nano',
+            price: '520.000đ',
+            image: 'https://i.ebayimg.com/images/g/u4cAAeSw4HJoauLu/s-l1200.jpg',
+            description: 'Virtual Pet Nano - thú cưng ảo nhỏ gọn với thiết kế hiện đại. Chăm sóc nó ở bất cứ đâu, bất cứ lúc nào với kích thước siêu nhỏ.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Kích thước:</strong> 3.7 x 1.8 cm (siêu nhỏ)</p><p>🔹 <strong>Màn hình:</strong> OLED mini</p><p>🔹 <strong>Pin:</strong> Button cell, ~7 ngày</p><p>🔹 <strong>Chức năng:</strong> Chăm sóc, chơi, huấn luyện</p><p>🔹 <strong>Trọng lượng:</strong> 30g</p>'
+        },
+        p16: {
+            id: 'p16',
+            name: 'Brick Game Cổ Điển',
+            price: '250.000đ',
+            image: 'https://thegioigames.vn/wp-content/uploads/2025/05/O1CN01v905Sd1TpRsprEjN4_2200788832431-0-cib.jpg',
+            description: 'Brick Game - trò chơi xếp gạch cổ điển được yêu thích hàng chục năm. Hiện đã được tái chế với chất lượng tốt hơn.',
+            specs: '<h3>📋 Thông Số Kỹ Thuật</h3><p>🔹 <strong>Trò chơi:</strong> 999+ levels Tetris</p><p>🔹 <strong>Màn hình:</strong> LCD đơn sắc</p><p>🔹 <strong>Pin:</strong> AA x 2, ~20 giờ</p><p>🔹 <strong>Kích thước:</strong> 8 x 5 cm</p><p>🔹 <strong>Âm thanh:</strong> Có (tắt được)</p>'
+        }
+    };
+
+    function showProductDetail(productId) {
+        const product = productDetails[productId];
+        if (!product) return;
+        
+        document.getElementById('detailImg').src = product.image;
+        document.getElementById('detailName').textContent = product.name;
+        document.getElementById('detailPrice').textContent = product.price;
+        document.getElementById('detailDesc').textContent = product.description;
+        document.getElementById('detailSpecs').innerHTML = product.specs;
+        document.getElementById('detailAddBtn').onclick = () => {
+            addToCart({id: product.id, name: product.name, price: product.price, image: product.image});
+            closeProductDetail();
+        };
+        
+        document.getElementById('productDetailModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductDetail() {
+        document.getElementById('productDetailModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeProductDetail();
+    });
+</script>
+
+<script>
+    // Cart management
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCart() {
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const countEl = document.getElementById('cartCount');
+        if (count > 0) {
+            countEl.textContent = count;
+            countEl.style.display = 'flex';
+        } else {
+            countEl.style.display = 'none';
+        }
+        renderCart();
+    }
+
+    function addToCart(product) {
+        const existing = cart.find(item => item.id === product.id);
+        if (existing) {
+            existing.quantity++;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+        alert('✅ ' + product.name + ' đã được thêm vào giỏ hàng!');
+    }
+
+    function removeFromCart(id) {
+        cart = cart.filter(item => item.id !== id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+    }
+
+    function updateQuantity(id, qty) {
+        const item = cart.find(item => item.id === id);
+        if (item) {
+            item.quantity = Math.max(1, qty);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+    }
+
+    function renderCart() {
+        const cartItems = document.getElementById('cartItems');
+        const cartSummary = document.getElementById('cartSummary');
+        
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<div class="cart-empty"><p>Giỏ hàng trống 😢</p><p>Thêm sản phẩm để bắt đầu mua sắm!</p></div>';
+            cartSummary.style.display = 'none';
+            return;
+        }
+
+        let total = 0;
+        cartItems.innerHTML = cart.map(item => {
+            const itemTotal = extractPrice(item.price) * item.quantity;
+            total += itemTotal;
+            return `
+                <div class="cart-item">
+                    <img src="${item.image}" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price}</div>
+                        <div class="cart-item-qty">
+                            <button onclick="updateQuantity('${item.id}', ${item.quantity - 1})">−</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">🗑</button>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('cartTotalPrice').textContent = formatPrice(total);
+        cartSummary.style.display = 'block';
+    }
+
+    function extractPrice(priceStr) {
+        return parseInt(priceStr.replace(/\D/g, '')) || 0;
+    }
+
+    function formatPrice(price) {
+        return price.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function toggleCart() {
+        document.getElementById('cartModal').classList.toggle('active');
+    }
+
+    function changeLanguage(lang) {
+        localStorage.setItem('language', lang);
+        alert('Ngôn ngữ đã thay đổi sang: ' + lang);
+    }
+
+    // Initialize
+    updateCart();
+</script>
+
+</body>
+</html>

@@ -68,7 +68,6 @@ body {
     text-decoration: none !important;
 }
 
-/* SIDE MENU */
 .side-menu {
     flex: 1;
     background: #6d8fb8;
@@ -87,7 +86,6 @@ body {
     cursor: pointer;
 }
 
-/* FEATURES */
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -103,7 +101,6 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
 
-/* SMALL BANNER */
 .small-banner {
     margin: 0 80px 80px;
     background: #f6b7cc;
@@ -114,7 +111,6 @@ body {
     color: #a6004c;
 }
 
-/* PRODUCTS */
 .products {
     padding: 0 80px 100px;
 }
@@ -161,7 +157,6 @@ body {
     font-weight: 700;
 }
 
-/* NEWSLETTER */
 .newsletter {
     margin: 80px;
     background: #fff0f7;
@@ -191,7 +186,6 @@ body {
     cursor: pointer;
 }
 
-/* NAVBAR */
 .navbar {
     background: #6d8fb8;
     padding: 20px 40px;
@@ -232,7 +226,6 @@ body {
     text-decoration: underline;
 }
 
-/* PRODUCT DETAIL MODAL */
 .product-detail-modal {
     display: none;
     position: fixed;
@@ -402,7 +395,6 @@ body {
     font-weight: 700;
 }
 
-/* LANGUAGE SELECTOR */
 .language-selector {
     background: #5a7fa2;
     padding: 8px 15px;
@@ -418,7 +410,6 @@ body {
     background: #4a6f92;
 }
 
-/* MODAL GIỎ HÀNG */
 .cart-modal {
     display: none;
     position: fixed;
@@ -602,7 +593,6 @@ body {
     cursor: not-allowed;
 }
 
-/* FOOTER */
 .footer {
     text-align: center;
     padding: 40px 80px;
@@ -632,7 +622,6 @@ body {
     color: #c96f8f;
 }
 
-/* PRODUCT DETAIL PAGE */
 .product-detail {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -701,7 +690,6 @@ body {
     background: #a94e6e;
 }
 
-/* SHOP PAGE */
 .shop-container {
     padding: 60px 80px;
 }
@@ -778,7 +766,6 @@ body {
     background: #a94e6e;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
     .container {
         padding: 30px 40px;

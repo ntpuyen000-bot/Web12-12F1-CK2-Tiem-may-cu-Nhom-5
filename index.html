@@ -1,340 +1,306 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiệm Máy Cũ</title>
-
-<link rel="stylesheet" href="styles.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiệm Máy Cũ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🎮 Tiệm Máy Cũ</div>
+    <ul class="nav-links">
+        <li><a href="index.html">🏠 Trang Chủ</a></li>
+        <li><a href="shop.html">🛍️ Cửa Hàng</a></li>
+        <li><a href="product.html">📱 Chi Tiết Sản Phẩm</a></li>
+    </ul>
+    <div class="navbar-right">
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒
+            <span class="cart-count" id="cartCount" style="display: none;">0</span>
+        </div>
+        <select class="language-selector" onchange="changeLanguage(this.value)">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="ja">🇯🇵 日本語</option>
+        </select>
+    </div>
+</nav>
 
 <div class="container">
 
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Tiệm Máy Cũ</h1>
+    </header>
 
+    <!-- HERO -->
+    <section class="hero">
 
-<header class="header">
+        <div class="hero-content">
+            <h2>Trở Về Tuổi Thơ</h2>
+            <p>
+                Khám phá thế giới Tamagotchi, máy xếp gạch Tetris 
+                và vô vàn ký ức ngọt ngào đang chờ đón bạn.
+            </p>
+            <a href="shop.html" style="text-decoration: none;"><button>Khám Phá Ngay</button></a>
+        </div>
 
-<div class="left-header">
-<img src="logo.png" class="logo">
-<h1>Tiệm Máy Cũ</h1>
-</div>
+        <nav class="side-menu">
+            <ul>
+                <li>🏠 Trang chủ</li>
+                <li>📰 Tin tức</li>
+                <li>🎮 Sản phẩm</li>
+                <li>👾 Nhân vật</li>
+                <li>🎁 Khuyến mãi</li>
+            </ul>
+        </nav>
 
-<nav class="nav">
-<a href="index.html">Home</a>
-<a href="shop.html">Shop</a>
-<a href="blog.html">Blog</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="cart.html" class="cart">🛒 <span id="cart-count">0</span></a>
-</nav>
-
-</header>
-
-
-
-<section class="hero">
-
-<div class="hero-content">
-<h2>Trở Về Tuổi Thơ</h2>
-
-<p>
-Khám phá thế giới Tamagotchi, máy xếp gạch Tetris
-và vô vàn ký ức ngọt ngào đang chờ đón bạn.
-</p>
-
-<button>Khám Phá Ngay</button>
-</div>
-
-<nav class="side-menu">
-<ul>
-<li>🏠 Trang chủ</li>
-<li>📰 Tin tức </li>
-<li>🎮 Sản phẩm</li>
-<li>👾 Tamagotchi</li>
-<li>🎁 Khuyến mãi</li>
-</ul>
-</nav>
-</section>
+    </section>
 
 </div>
 
-
-
+<!-- FEATURES -->
 <section class="features">
-
-<div class="feature-item">🚚 Miễn phí vận chuyển</div>
-
-<div class="feature-item">💬 Hỗ trợ 24/7</div>
-
-<div class="feature-item">🎁 Quà tặng tuổi thơ</div>
-
-<div class="feature-item">💳 Thanh toán linh hoạt</div>
-
+    <div class="feature-item">🚚 Miễn phí vận chuyển</div>
+    <div class="feature-item">💬 Hỗ trợ 24/7</div>
+    <div class="feature-item">🎁 Quà tặng tuổi thơ</div>
+    <div class="feature-item">💳 Thanh toán linh hoạt</div>
 </section>
 
-<script>
-
-const items = document.querySelectorAll(".feature-item");
-
-items[0].onclick = () => {
-showPopup("🚚 Miễn phí vận chuyển",
-"Đơn hàng từ <b>300.000đ</b> sẽ được miễn phí vận chuyển toàn quốc.");
-};
-
-items[1].onclick = () => {
-showPopup("💬 Hỗ trợ 24/7",
-'<a href="tel:0123456789"><button>📞 Gọi hỗ trợ ngay</button></a>');
-};
-
-items[2].onclick = () => {
-showPopup("🎁 Quà tặng tuổi thơ",
-'<a href="/collections/toys"><button>Xem sản phẩm gợi ý</button></a>');
-};
-
-items[2].onclick = () => {
-showPopup("🎁 Quà tặng tuổi thơ",
-'<a href="https://tamagotchi-official.com/gb/" target="_blank"><button>Xem sản phẩm gợi ý</button></a>');
-};
-
-items[3].onclick = () => {
-showPopup("💳 Phương thức thanh toán",
-`
-<ul style="text-align:left">
-<li>Thanh toán khi nhận hàng (COD)</li>
-<li>Chuyển khoản ngân hàng</li>
-<li>Ví điện tử (Momo, ZaloPay)</li>
-<li>Thẻ Visa / Mastercard</li>
-</ul>
-`);
-};
-
-function showPopup(title,content){
-
-const overlay = document.createElement("div");
-overlay.className="overlay";
-
-const popup = document.createElement("div");
-popup.className="popup";
-
-popup.innerHTML = `
-<h3>${title}</h3>
-<p>${content}</p>
-<button onclick="closePopup()">Đóng</button>
-`;
-
-document.body.appendChild(overlay);
-document.body.appendChild(popup);
-
-}
-
-function closePopup(){
-document.querySelector(".popup").remove();
-document.querySelector(".overlay").remove();
-}
-
-</script>
-
-
-
-
+<!-- SMALL BANNER -->
 <section class="small-banner">
-<h3>Giảm giá 20% cho máy Tamagotchi tuần này!</h3>
+    <h3>Giảm giá 20% cho máy Tamagotchi tuần này!</h3>
 </section>
 
-
+<!-- SẢN PHẨM NỔI BẬT -->
 <section class="products">
+    <h2>Sản Phẩm Nổi Bật</h2>
+    <div class="product-grid">
 
-<h2>Sản Phẩm Nổi Bật</h2>
+        <!-- 8 sản phẩm đầu của bạn giữ nguyên -->
 
-<div class="product-grid">
+        <div class="product-card">
+            <img src="https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg">
+            <h4>Tamagotchi Classic</h4>
+            <p>450.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg">
-<h4>Tamagotchi Classic</h4>
-<p>450.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg">
+            <h4>Máy Xếp Gạch Tetris</h4>
+            <p>350.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg">
-<h4>Máy Xếp Gạch Tetris</h4>
-<p>350.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc">
+            <h4>Máy chơi game PS5</h4>
+            <p>31.200.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc">
-<h4>Máy chơi game PS5</h4>
-<p>31.200.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc">
+            <h4>Máy cầm tay Sup 400</h4>
+            <p>390.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc">
-<h4>Máy cầm tay Sup 400</h4>
-<p>390.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc">
+            <h4>Máy chơi game cầm tay Nitendo Switch</h4>
+            <p>6.320.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc">
-<h4>Máy chơi game cầm tay Nintendo Switch</h4>
-<p>6.320.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc">
+            <h4>Mario Kart World cho Nintendo Switch 2</h4>
+            <p>1.650.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc">
-<h4>Mario Kart World cho Nintendo Switch 2</h4>
-<p>1.650.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21">
+            <h4>NSW2 Hades 2 - Nintendo Switch 2</h4>
+            <p>1.650.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21">
-<h4>NSW2 Hades 2</h4>
-<p>1.650.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ">
+            <h4>NSW2 Donkey Kong Bananza - Nintendo Switch 2</h4>
+            <p>1.650.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ">
-<h4>Donkey Kong Bananza</h4>
-<p>1.650.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
-
-</div>
+    </div>
 </section>
 
-
-
+<!-- SẢN PHẨM MỚI -->
 <section class="products new-products">
+    <h2>Sản Phẩm Mới</h2>
+    <div class="product-grid">
 
-<h2>Sản Phẩm Mới</h2>
+        <div class="product-card">
+            <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1">
+            <h4>Original Tamagotchi Celebration Reflection</h4>
+            <p>1.000.000đ</p>
+        </div>
 
-<div class="product-grid">
+        <div class="product-card">
+            <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1">
+            <h4>Tamagotchi Paradise - Jade Forest</h4>
+            <p>1.000.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1">
-<h4>Original Tamagotchi Celebration Reflection</h4>
-<p>1.000.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <h4>Original Tamagotchi Angel Sky</h4>
+            <p>1.000.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1">
-<h4>Tamagotchi Paradise - Jade Forest</h4>
-<p>1.000.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
+        <div class="product-card">
+            <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1">
+            <h4>Original Tamagotchi Tama Garden</h4>
+            <p>1.000.000đ</p>
+        </div>
 
-<div class="product-card">
-<img src="https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
-<h4>Original Tamagotchi Angel Sky</h4>
-<p>1.000.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
-
-<div class="product-card">
-<img src="https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1">
-<h4>Original Tamagotchi Tama Garden</h4>
-<p>1.000.000đ</p>
-<button class="add-cart">Thêm vào giỏ</button>
-</div>
-
-</div>
+    </div>
 </section>
 
-
+<!-- NEWSLETTER -->
 <section class="newsletter">
-
-<h3>Nhận tin khuyến mãi mới nhất</h3>
-
-<form>
-
-<input type="email" placeholder="Nhập email của bạn">
-
-<button type="submit">Đăng ký</button>
-
-</form>
-
+    <h3>Nhận tin khuyến mãi mới nhất</h3>
+    <form>
+        <input type="email" placeholder="Nhập email của bạn">
+        <button type="submit">Đăng ký</button>
+    </form>
 </section>
 
-
-
+<!-- FOOTER -->
 <footer class="footer">
-
-<div>
-<h4>Tiệm Máy Cũ</h4>
-<p>Chuyên máy game & đồ chơi tuổi thơ.</p>
-</div>
-
-<div>
-<p>📞 0909 123 456</p>
-<p>📧 tiemmaycu@email.com</p>
-</div>
-
-<div>
-<p>🌐 Facebook | Instagram | Tiktok</p>
-</div>
-
+    <p><strong>🎮 Tiệm Máy Cũ</strong> - Chuyên máy game & đồ chơi tuổi thơ.</p>
+    <div class="footer-links">
+        <a href="index.html">Trang Chủ</a> | 
+        <a href="shop.html">Cửa Hàng</a> | 
+        <a href="product.html">Chi Tiết Sản Phẩm</a>
+    </div>
+    <p style="margin-top: 10px; font-size: 13px;">📞 0909 123 456 | 📧 tiemmaycu@email.com</p>
 </footer>
 
+<!-- CART MODAL -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+        <div class="cart-modal-header">
+            <h2>🛒 Giỏ Hàng</h2>
+            <button class="cart-close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cartItems"></div>
+        <div id="cartSummary" style="display: none;" class="cart-summary">
+            <div class="cart-total">
+                <span>Tổng cộng:</span>
+                <span class="cart-total-amount" id="cartTotalPrice">0đ</span>
+            </div>
+            <button class="cart-checkout-btn">💳 Thanh Toán</button>
+        </div>
+    </div>
+</div>
+
 <script>
+    // Cart management
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-let cart = [];
+    function updateCart() {
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const countEl = document.getElementById('cartCount');
+        if (count > 0) {
+            countEl.textContent = count;
+            countEl.style.display = 'flex';
+        } else {
+            countEl.style.display = 'none';
+        }
+        renderCart();
+    }
 
-const cartCount = document.getElementById("cart-count");
-const cartIcon = document.querySelector(".cart");
+    function addToCart(product) {
+        const existing = cart.find(item => item.id === product.id);
+        if (existing) {
+            existing.quantity++;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+    }
 
-document.querySelectorAll(".add-cart").forEach(button => {
+    function removeFromCart(id) {
+        cart = cart.filter(item => item.id !== id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+    }
 
-button.onclick = () => {
+    function updateQuantity(id, qty) {
+        const item = cart.find(item => item.id === id);
+        if (item) {
+            item.quantity = Math.max(1, qty);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+    }
 
-const card = button.parentElement;
+    function renderCart() {
+        const cartItems = document.getElementById('cartItems');
+        const cartSummary = document.getElementById('cartSummary');
+        
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<div class="cart-empty"><p>Giỏ hàng trống 😢</p><p>Thêm sản phẩm để bắt đầu mua sắm!</p></div>';
+            cartSummary.style.display = 'none';
+            return;
+        }
 
-const name = card.querySelector("h4").innerText;
-const price = card.querySelector("p").innerText;
+        let total = 0;
+        cartItems.innerHTML = cart.map(item => {
+            const itemTotal = extractPrice(item.price) * item.quantity;
+            total += itemTotal;
+            return `
+                <div class="cart-item">
+                    <img src="${item.image}" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price}</div>
+                        <div class="cart-item-qty">
+                            <button onclick="updateQuantity('${item.id}', ${item.quantity - 1})">−</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">🗑</button>
+                </div>
+            `;
+        }).join('');
 
-cart.push({name,price});
+        document.getElementById('cartTotalPrice').textContent = formatPrice(total);
+        cartSummary.style.display = 'block';
+    }
 
-cartCount.innerText = cart.length;
+    function extractPrice(priceStr) {
+        return parseInt(priceStr.replace(/\D/g, '')) || 0;
+    }
 
-alert(name + " đã được thêm vào giỏ hàng!");
+    function formatPrice(price) {
+        return price.toLocaleString('vi-VN') + 'đ';
+    }
 
-};
+    function toggleCart() {
+        document.getElementById('cartModal').classList.toggle('active');
+    }
 
-});
+    function changeLanguage(lang) {
+        localStorage.setItem('language', lang);
+        alert('Ngôn ngữ đã thay đổi sang: ' + lang);
+    }
 
-
-cartIcon.onclick = () => {
-
-if(cart.length === 0){
-alert("Giỏ hàng đang trống");
-return;
-}
-
-let message = "Sản phẩm trong giỏ:\n\n";
-
-cart.forEach(item => {
-message += item.name + " - " + item.price + "\n";
-});
-
-alert(message);
-
-};
-
+    // Initialize
+    updateCart();
 </script>
 
-
-
-
 </body>
-</html> 
+</html>

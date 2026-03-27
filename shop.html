@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">🎮 Tiệm Máy Cũ</div>
     <ul class="nav-links">
@@ -29,133 +27,101 @@
         </select>
     </div>
 </nav>
-
-<!-- SHOP CONTENT -->
 <div class="shop-container">
     <h1>🛍️ Cửa Hàng Của Chúng Tôi</h1>
     
     <div class="shop-grid">
-        <!-- Product 1 -->
+    
         <div class="shop-product">
             <img src="https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg" alt="Tamagotchi Classic" onclick="showProductDetail('p1')" style="cursor: pointer;">
             <h3>Tamagotchi Classic</h3>
             <div class="price">450.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p1', name: 'Tamagotchi Classic', price: '450.000đ', image: 'https://media.entertainmentearth.com/assets/images/1d3900dcafa1447da600663d1d835599xl.jpg'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 2 -->
         <div class="shop-product">
             <img src="https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg" alt="Máy Xếp Gạch Tetris" onclick="showProductDetail('p2')" style="cursor: pointer;">
             <h3>Máy Xếp Gạch Tetris</h3>
             <div class="price">350.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p2', name: 'Máy Xếp Gạch Tetris', price: '350.000đ', image: 'https://m.media-amazon.com/images/I/71J1XNDNKKL._AC_UF1000,1000_QL80_.jpg'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 3 -->
         <div class="shop-product">
             <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc" alt="PS5" onclick="showProductDetail('p3')" style="cursor: pointer;">
             <h3>Máy Chơi Game PS5</h3>
             <div class="price">31.200.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p3', name: 'Máy Chơi Game PS5', price: '31.200.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTu86cKsgRRmtfcU_f6R8v-ZTdwPuuy9WAWIA5t2oTPuAATql9_fNZZ4GmBxfwbGBHevCbCCvwUuPrrjIu6eN6jPz_N50QSFy9DPO4O8h_m0camEX6UVw6nPq_n-ywgQDZKmR_R05I&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 4 -->
         <div class="shop-product">
             <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc" alt="Sup 400" onclick="showProductDetail('p4')" style="cursor: pointer;">
             <h3>Máy Cầm Tay Sup 400</h3>
             <div class="price">390.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p4', name: 'Máy Cầm Tay Sup 400', price: '390.000đ', image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRqYKamFcwemqmOkFV3FuXqm5c2L-q1MzgAOEtJ0PqwrtDod0b1lbv5sWAuDKR7CaN01yfD0X3TEVCJPq9VcaFwkeoJ2i_Wym-PXLBp3DGEgJ0re_dnwlRuJC5h3MoTGZnZEbpDMd8&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 5 -->
         <div class="shop-product">
             <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc" alt="Nintendo Switch" onclick="showProductDetail('p5')" style="cursor: pointer;">
             <h3>Nintendo Switch Cầm Tay</h3>
             <div class="price">6.320.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p5', name: 'Nintendo Switch Cầm Tay', price: '6.320.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjTO3DNTdHPkMvSzVN278Ql-56ukVoAuHbjScblY6dDuma71mwemZ8Wn9UTcPlh4A2YDtFcYCWtqkbMArLtMdRRT_fTDPfCjgUrDp8Cm8hlMgsb49FDmglAWMhO5_ToB-b2langg&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 6 -->
         <div class="shop-product">
             <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc" alt="Mario Kart" onclick="showProductDetail('p6')" style="cursor: pointer;">
             <h3>Mario Kart World - NSW 2</h3>
             <div class="price">1.650.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p6', name: 'Mario Kart World - NSW 2', price: '1.650.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSnxyCPRPqagj1FD6u3L0MVR69802vGNngRIohniQDIRrW9WsDLsqDnbFNVKKyYvp4BbKR-Lt9Pam2uIIVbIMNmPHn_0kocxibeRzjsQO43x8TESMZwmSG9-OyXY7ESOy0A-Zrq1TE&usqp=CAc'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 7 -->
         <div class="shop-product">
             <img src="https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21" alt="Hades 2" onclick="showProductDetail('p7')" style="cursor: pointer;">
             <h3>Hades 2 - Nintendo Switch 2</h3>
             <div class="price">1.650.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p7', name: 'Hades 2 - Nintendo Switch 2', price: '1.650.000đ', image: 'https://s.pacn.ws/1/p/1bt/hades-ii-nintendo-switch-2-edition-860987.8.jpg?v=t30s21'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 8 -->
         <div class="shop-product">
             <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ" alt="Donkey Kong" onclick="showProductDetail('p8')" style="cursor: pointer;">
             <h3>Donkey Kong Banana - NSW 2</h3>
             <div class="price">1.650.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p8', name: 'Donkey Kong Banana - NSW 2', price: '1.650.000đ', image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS__QsKcROE1BcQMEQ40if7M9i2gukFinjFjwoy50mThyenAS-mWmho4TTbn2sUPF1gGEgB0TDuzO3UH23AcFSX9aD_bVE6YWImn0AUgueon_axLV_5_eMYdQ'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 9 -->
         <div class="shop-product">
             <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1" alt="Tamagotchi Celebration" onclick="showProductDetail('p9')" style="cursor: pointer;">
             <h3>Tamagotchi Celebration</h3>
             <div class="price">1.000.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p9', name: 'Tamagotchi Celebration', price: '1.000.000đ', image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2025/11/13/T4n32mixwaeQ40jt/Original%20Tamagotchi%20Celebration%20reflection_05.png?_=1'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 10 -->
         <div class="shop-product">
             <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1" alt="Tamagotchi Paradise" onclick="showProductDetail('p10')" style="cursor: pointer;">
             <h3>Tamagotchi Paradise - Jade</h3>
             <div class="price">1.000.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p10', name: 'Tamagotchi Paradise - Jade', price: '1.000.000đ', image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2025/10/06/c1VlwjfefTfwOpzL/Tamagotchi%20Paradise%20-%20Jade%20Forest_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.png?_=1'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 11 -->
         <div class="shop-product">
             <img src="https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Angel Sky" onclick="showProductDetail('p11')" style="cursor: pointer;">
             <h3>Tamagotchi Angel Sky</h3>
             <div class="price">1.000.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p11', name: 'Tamagotchi Angel Sky', price: '1.000.000đ', image: 'https://tse2.mm.bing.net/th/id/OIP.8uqpG6zrVpzo5qKzscBohgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 12 -->
         <div class="shop-product">
             <img src="https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1" alt="Tama Garden" onclick="showProductDetail('p12')" style="cursor: pointer;">
             <h3>Tamagotchi Tama Garden</h3>
             <div class="price">1.000.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p12', name: 'Tamagotchi Tama Garden', price: '1.000.000đ', image: 'https://tamagotchi-official.com/tamagotchi/jp/product/2024/09/26/NF9VLymCsW8XSoGW/1_%E3%80%9010%E6%9C%881%E6%97%A5%E6%83%85%E5%A0%B1%E8%A7%A3%E7%A6%81%E3%80%91Original%20Tamagotchi%20Tama%20Garden_%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%83%E3%83%88.jpeg?_=1'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 13 -->
         <div class="shop-product">
             <img src="https://cdn.shopify.com/s/files/1/0905/5305/7560/files/Game-boy_600x600.webp?v=1764301353" alt="Game Boy" onclick="showProductDetail('p13')" style="cursor: pointer;">
             <h3>Game Boy Classic - Retro</h3>
             <div class="price">850.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p13', name: 'Game Boy Classic - Retro', price: '850.000đ', image: 'https://cdn.shopify.com/s/files/1/0905/5305/7560/files/Game-boy_600x600.webp?v=1764301353'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 14 -->
         <div class="shop-product">
             <img src="https://i.etsystatic.com/21585616/r/il/ac3b6f/5409944736/il_fullxfull.5409944736_r3bo.jpg" alt="Pokémon" onclick="showProductDetail('p14')" style="cursor: pointer;">
             <h3>Pokémon Handheld Game</h3>
             <div class="price">750.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p14', name: 'Pokémon Handheld Game', price: '750.000đ', image: 'https://i.etsystatic.com/21585616/r/il/ac3b6f/5409944736/il_fullxfull.5409944736_r3bo.jpg'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 15 -->
         <div class="shop-product">
             <img src="https://i.ebayimg.com/images/g/u4cAAeSw4HJoauLu/s-l1200.jpg" alt="Virtual Pet" onclick="showProductDetail('p15')" style="cursor: pointer;">
             <h3>Virtual Pet Nano</h3>
             <div class="price">520.000đ</div>
             <button class="btn-view" onclick="addToCart({id: 'p15', name: 'Virtual Pet Nano', price: '520.000đ', image: 'https://i.ebayimg.com/images/g/u4cAAeSw4HJoauLu/s-l1200.jpg'})">🛒 Thêm Vào Giỏ</button>
         </div>
-
-        <!-- Product 16 -->
         <div class="shop-product">
             <img src="https://thegioigames.vn/wp-content/uploads/2025/05/O1CN01v905Sd1TpRsprEjN4_2200788832431-0-cib.jpg" alt="Brick Game" onclick="showProductDetail('p16')" style="cursor: pointer;">
             <h3>Brick Game Cổ Điển</h3>
@@ -164,8 +130,6 @@
         </div>
     </div>
 </div>
-
-<!-- FOOTER -->
 <footer class="footer">
     <p><strong>🎮 Tiệm Máy Cũ</strong> - Chuyên máy game & đồ chơi tuổi thơ.</p>
     <div class="footer-links">
@@ -175,8 +139,6 @@
     </div>
     <p style="margin-top: 10px; font-size: 13px;">📞 0909 123 456 | 📧 tiemmaycu@email.com</p>
 </footer>
-
-<!-- CART MODAL -->
 <div class="cart-modal" id="cartModal">
     <div class="cart-modal-content">
         <div class="cart-modal-header">
@@ -194,7 +156,6 @@
     </div>
 </div>
 
-<!-- PRODUCT DETAIL MODAL -->
 <div class="product-detail-modal" id="productDetailModal">
     <button class="product-detail-modal-close" onclick="closeProductDetail()">✕</button>
     <div class="product-detail-modal-content">
@@ -210,7 +171,6 @@
 </div>
 
 <script>
-    // Product details database
     const productDetails = {
         p1: {
             id: 'p1',
